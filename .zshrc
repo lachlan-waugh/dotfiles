@@ -100,14 +100,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/.zsh_aliases
-# Fix monitor layout/resolution
-# xrandr --output DP-0 --primary --mode 2560x1440 --rate 60.00 --output HDMI-0 --mode 2560x1440 --rate 60.00 --left-of DP-0
+[ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 
 . /usr/share/z/z.sh
 
-export PATH="$PATH:$HOME/.local/bin"
+# pwn stuff
 export PYTHONPATH="$PYTHONPATH:/$HOME/work/uni/tut/sols/6447-sols/lib"
 
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+# hugo stuff (well technically it's ruby)
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$GEM_HOME/bin"
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
