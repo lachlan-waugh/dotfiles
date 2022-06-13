@@ -1,0 +1,6 @@
+alias vim='nvim'
+alias binja='binaryninja-demo'
+alias mail='thunderbird-beta'
+
+alias wifi='nmcli device wifi connect Lamington password '
+alias wifi_login='login() { nmcli device wifi connect $1 password $2 };login'
