@@ -7,9 +7,12 @@ alias wifi='nmcli device wifi connect Lamington password '
 alias wifi_login='login() { nmcli device wifi connect $1 password $2 };login'
 
 alias clone='clone() { git clone git@github.com:lachlan-waugh/$1.git };clone'
+alias gitbot='bot() { git "$@" --config core.sshCommand="ssh -i ~/.ssh/melonbot" };bot'
+alias gitme='me() { git "$@" --config core.sshCommand="ssh -i ~/.ssh/id_rsa" };me'
 
 # docker stuff
-alias docker-clean='docker rm -f $(docker ps -aq) && docker system prune -a'
+alias docker-clean='docker kill $(docker ps -a -q); docker system prune -a'
+alias docker-start='start() { docker compose build $@ && docker compose up $@ };start'
 alias docker-ip='get_ip() { docker inspect $( docker ps | grep "$1" | cut -f1 -d" " ) | grep IPAddress };get_ip'
 alias docker-bash='get_shell() { docker exec -it $( docker ps | grep "$1" | cut -f1 -d" " ) /bin/bash };get_shell'
 
