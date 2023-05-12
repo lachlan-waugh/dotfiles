@@ -105,7 +105,7 @@ source $ZSH/oh-my-zsh.sh
 . /usr/share/z/z.sh
 
 # pwn stuff
-export PYTHONPATH="$PYTHONPATH:/$HOME/work/uni/tut/sols/6447-sols/lib"
+export PYTHONPATH="$PYTHONPATH:/$HOME/todo/uni/sols/6447-sols/lib"
 
 # hugo stuff (well technically it's ruby)
 export PATH="$PATH:$HOME/.local/bin"

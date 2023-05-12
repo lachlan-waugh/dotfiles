@@ -11,3 +11,7 @@ source ~/.zshrc
 
 cp ~/.gdbinit .
 ```
+
+Also install
+* alacritty
+* tmux
