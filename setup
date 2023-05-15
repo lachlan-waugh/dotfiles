@@ -1,12 +1,12 @@
 #!/usr/bin/zsh
 
-if [ $1 == '--backup' ]; then
+if [[ $1 = '--backup' ]]; then
     cp ~/.config/i3/config .i3config # source with $mod + Shift + r
     cp ~/.Xresources .Xresources
     cp ~/.zshrc .zshrc
     cp ~/.zsh_aliases .zsh_aliases
-    cp ~/.config/init.vim .vimrc
-    cp ~/..gdbinit .gdbinit
+    cp ~/.config/nvim/init.vim .vimrc
+    cp ~/.gdbinit .gdbinit
 else
     cp .i3config ~/.config/i3/config
     cp .Xresources ~/
@@ -17,7 +17,7 @@ else
     source ~/.zshrc
 
     mkdir -p ~/.config/nvim
-    cp .vimrc ~/.config/init.vim # source with :PlugInstall
+    cp .vimrc ~/.config/nvim/init.vim # source with :PlugInstall
     
     cp .tmux.conf ~/ # source with tmux source ~/.tmux.conf
     tmux source ~/.tmux.conf
