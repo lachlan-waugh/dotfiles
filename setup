@@ -1,14 +1,26 @@
 #!/usr/bin/zsh
 
-cp .i3config ~/.config/i3/config    # source with $mod + Shift + r
-cp .Xresources ~/
-xrdb ~/.Xresources
+if [ $1 == '--backup' ]; then
+    cp ~/.config/i3/config .i3config # source with $mod + Shift + r
+    cp ~/.Xresources .Xresources
+    cp ~/.zshrc .zshrc
+    cp ~/.zsh_aliases .zsh_aliases
+    cp ~/.config/init.vim .vimrc
+    cp ~/..gdbinit .gdbinit
+else
+    cp .i3config ~/.config/i3/config
+    cp .Xresources ~/
+    xrdb ~/.Xresources
 
-cp .zshrc ~/
-cp .zsh_aliases ~/
-source ~/.zshrc
+    cp .zshrc ~/
+    cp .zsh_aliases ~/
+    source ~/.zshrc
 
-mkdir -p ~/.config/nvim
-cp .vimrc ~/.config/init.vim
+    mkdir -p ~/.config/nvim
+    cp .vimrc ~/.config/init.vim # source with :PlugInstall
+    
+    cp .tmux.conf ~/ # source with tmux source ~/.tmux.conf
+    tmux source ~/.tmux.conf
 
-cp .gdbinit ~/.gdbinit
+    cp .gdbinit ~/
+fi
