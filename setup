@@ -6,7 +6,16 @@ if [[ $1 = '--backup' ]]; then
     cp ~/.zshrc .zshrc
     cp ~/.zsh_aliases .zsh_aliases
     cp ~/.config/nvim/init.vim .vimrc
+    cp ~/.tmux.conf .
     cp ~/.gdbinit .gdbinit
+elif [[ $1 = "--diff" ]]; then
+    diff ~/.config/i3/config .i3config # source with $mod + Shift + r
+    diff ~/.Xresources .Xresources
+    diff ~/.zshrc .zshrc
+    diff ~/.zsh_aliases .zsh_aliases
+    diff ~/.config/nvim/init.vim .vimrc
+    diff ~/.tmux.conf .
+    diff ~/.gdbinit .gdbinit
 else
     cp .i3config ~/.config/i3/config
     cp .Xresources ~/
