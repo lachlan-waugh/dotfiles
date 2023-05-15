@@ -481,9 +481,9 @@ set $yellowbrown	#e1b700
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
 client.focused		    $lightblue	$darkblue	$white		$grey		$mediumgrey
-client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
-client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
-client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
+client.unfocused	    $darkblue	$darkblue	$grey		$grey		$darkgrey
+client.focused_inactive	$darkblue	$darkblue	$grey		$grey		$black
+client.urgent		    $urgentred	$urgentred	$white		$grey		$yellowbrown
 
 ############################################
 # bar settings (input comes from i3blocks) #
