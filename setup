@@ -31,7 +31,7 @@ else
     cp .vimrc ~/.config/nvim/init.vim # source with :PlugInstall
     
     cp .tmux.conf ~/ # source with tmux source ~/.tmux.conf
-    tmux source ~/.tmux.conf
+    # tmux source ~/.tmux.conf # only needed if running in tmux
 
     cp .gdbinit ~/
 fi
