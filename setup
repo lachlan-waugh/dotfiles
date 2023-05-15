@@ -8,4 +8,7 @@ cp .zshrc ~/
 cp .zsh_aliases ~/
 source ~/.zshrc
 
-cp ~/.gdbinit .
+mkdir -p ~/.config/nvim
+cp .vimrc ~/.config/init.vim
+
+cp .gdbinit ~/.gdbinit
