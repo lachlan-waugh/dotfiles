@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
 if [[ $1 = '--cache' ]]; then
-    cp -r ~/.config/i3/* config/.i3
+    cp -r ~/.config/i3/* config/.i3/
     cp ~/.Xresources config/.Xresources
     cp ~/.zshrc config/.zshrc
     cp ~/.zsh_aliases config/.zsh_aliases
@@ -10,7 +10,7 @@ if [[ $1 = '--cache' ]]; then
     cp ~/.gdbinit config/.gdbinit
 
 elif [[ $1 = "--diff" ]]; then
-    diff -r ~/.config/i3/* config/.i3
+    diff -r ~/.config/i3 config/.i3
     diff ~/.Xresources config/.Xresources
     diff ~/.zshrc config/.zshrc
     diff ~/.zsh_aliases config/.zsh_aliases
@@ -19,7 +19,7 @@ elif [[ $1 = "--diff" ]]; then
     diff ~/.gdbinit config/.gdbinit
 
 else
-    cp -r config/.i3/* ~/.config/i3 # source with $mod + Shift + r
+    cp -r config/.i3/* ~/.config/i3/ # source with $mod + Shift + r
     cp config/.Xresources ~/
     xrdb ~/.Xresources
 
