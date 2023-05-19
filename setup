@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
 if [[ $1 = '--cache' ]]; then
-    cp -r ~/.config/i3 config/.i3
+    cp -r ~/.config/i3/* config/.i3
     cp ~/.Xresources config/.Xresources
     cp ~/.zshrc config/.zshrc
     cp ~/.zsh_aliases config/.zsh_aliases

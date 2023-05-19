@@ -19,3 +19,4 @@ alias docker-bash='get_shell() { docker exec -it $( docker ps | grep "$1" | cut 
 
 # pwn stuff
 alias binja='binaryninja-demo'
+alias kali='qemu-system-x86_64 -m 20G -smp 3 -accel kvm -drive file=kali-2023.qcow2 -boot order=d -drive file=kali_hdd,format=raw'
