@@ -13,4 +13,7 @@ Also install
     * rofi
     * suckless-tools
     * dmenu
-    * nitrogen
+ * nitrogen
+ * nordic wallpapers
+ * oh-my-zsh (get it from git)
+ * z
