@@ -2,6 +2,7 @@
 
 if [[ $1 = '--cache' ]]; then
     cp ~/.config/i3/config .i3config
+    cp ~/.config/i3/i3blocks.conf .i3blocks
     cp ~/.Xresources .Xresources
     cp ~/.zshrc .zshrc
     cp ~/.zsh_aliases .zsh_aliases
@@ -20,6 +21,7 @@ elif [[ $1 = "--diff" ]]; then
 
 else
     cp .i3config ~/.config/i3/config # source with $mod + Shift + r
+    cp .i3blocks ~/.config/i3/i3blocks.conf # source with $mod + Shift + r
     cp .Xresources ~/
     xrdb ~/.Xresources
 

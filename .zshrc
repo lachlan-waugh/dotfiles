@@ -100,6 +100,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 
 . /usr/share/z/z.sh
