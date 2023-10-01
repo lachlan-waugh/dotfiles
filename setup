@@ -1,6 +1,7 @@
 #!/usr/bin/zsh
 
 if [[ $1 = '--cache' ]]; then
+<<<<<<< HEAD
     cp ~/.config/i3/config .i3config
     cp ~/.config/i3/i3blocks.conf .i3blocks
     cp ~/.Xresources .Xresources
@@ -9,31 +10,45 @@ if [[ $1 = '--cache' ]]; then
     cp ~/.config/nvim/init.vim .vimrc
     cp ~/.tmux.conf .
     cp ~/.gdbinit .gdbinit
+=======
+    cp -r ~/.config/i3/* config/.i3/
+    cp ~/.Xresources config/.Xresources
+    cp ~/.zshrc config/.zshrc
+    cp ~/.zsh_aliases config/.zsh_aliases
+    cp ~/.config/nvim/init.vim config/.vimrc
+    cp ~/.tmux.conf config/.
+    cp ~/.gdbinit config/.gdbinit
+>>>>>>> 0a393d79d4906676c231372cd83e7d80d3910bc1
 
 elif [[ $1 = "--diff" ]]; then
-    diff ~/.config/i3/config .i3config
-    diff ~/.Xresources .Xresources
-    diff ~/.zshrc .zshrc
-    diff ~/.zsh_aliases .zsh_aliases
-    diff ~/.config/nvim/init.vim .vimrc
-    diff ~/.tmux.conf .
-    diff ~/.gdbinit .gdbinit
+    diff -r ~/.config/i3 config/.i3
+    diff ~/.Xresources config/.Xresources
+    diff ~/.zshrc config/.zshrc
+    diff ~/.zsh_aliases config/.zsh_aliases
+    diff ~/.config/nvim/init.vim config/.vimrc
+    diff ~/.tmux.conf config/.tmux.conf
+    diff ~/.gdbinit config/.gdbinit
 
 else
+<<<<<<< HEAD
     cp .i3config ~/.config/i3/config # source with $mod + Shift + r
     cp .i3blocks ~/.config/i3/i3blocks.conf # source with $mod + Shift + r
     cp .Xresources ~/
+=======
+    cp -r config/.i3/* ~/.config/i3/ # source with $mod + Shift + r
+    cp config/.Xresources ~/
+>>>>>>> 0a393d79d4906676c231372cd83e7d80d3910bc1
     xrdb ~/.Xresources
 
-    cp .zshrc ~/
-    cp .zsh_aliases ~/
+    cp config/.zshrc ~/
+    cp config/.zsh_aliases ~/
     source ~/.zshrc
 
     mkdir -p ~/.config/nvim
-    cp .vimrc ~/.config/nvim/init.vim # source with :PlugInstall
+    cp config/.vimrc ~/.config/nvim/init.vim # source with :PlugInstall
     
-    cp .tmux.conf ~/ # source with tmux source ~/.tmux.conf
+    cp config/.tmux.conf ~/ # source with tmux source ~/.tmux.conf
     # tmux source ~/.tmux.conf # only needed if running in tmux
 
-    cp .gdbinit ~/
+    cp config/.gdbinit ~/
 fi
