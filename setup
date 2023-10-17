@@ -1,16 +1,6 @@
 #!/usr/bin/zsh
 
 if [[ $1 = '--cache' ]]; then
-<<<<<<< HEAD
-    cp ~/.config/i3/config .i3config
-    cp ~/.config/i3/i3blocks.conf .i3blocks
-    cp ~/.Xresources .Xresources
-    cp ~/.zshrc .zshrc
-    cp ~/.zsh_aliases .zsh_aliases
-    cp ~/.config/nvim/init.vim .vimrc
-    cp ~/.tmux.conf .
-    cp ~/.gdbinit .gdbinit
-=======
     cp -r ~/.config/i3/* config/.i3/
     cp ~/.Xresources config/.Xresources
     cp ~/.zshrc config/.zshrc
@@ -18,26 +8,19 @@ if [[ $1 = '--cache' ]]; then
     cp ~/.config/nvim/init.vim config/.vimrc
     cp ~/.tmux.conf config/.
     cp ~/.gdbinit config/.gdbinit
->>>>>>> 0a393d79d4906676c231372cd83e7d80d3910bc1
 
 elif [[ $1 = "--diff" ]]; then
-    diff -r ~/.config/i3 config/.i3
-    diff ~/.Xresources config/.Xresources
-    diff ~/.zshrc config/.zshrc
-    diff ~/.zsh_aliases config/.zsh_aliases
-    diff ~/.config/nvim/init.vim config/.vimrc
-    diff ~/.tmux.conf config/.tmux.conf
-    diff ~/.gdbinit config/.gdbinit
+    diff --color -r ~/.config/i3 config/.i3
+    diff --color ~/.Xresources config/.Xresources
+    diff --color ~/.zshrc config/.zshrc
+    diff --color ~/.zsh_aliases config/.zsh_aliases
+    diff --color ~/.config/nvim/init.vim config/.vimrc
+    diff --color ~/.tmux.conf config/.tmux.conf
+    diff --color ~/.gdbinit config/.gdbinit
 
-else
-<<<<<<< HEAD
-    cp .i3config ~/.config/i3/config # source with $mod + Shift + r
-    cp .i3blocks ~/.config/i3/i3blocks.conf # source with $mod + Shift + r
-    cp .Xresources ~/
-=======
+elif [[ $1 = "--export" ]]; then
     cp -r config/.i3/* ~/.config/i3/ # source with $mod + Shift + r
     cp config/.Xresources ~/
->>>>>>> 0a393d79d4906676c231372cd83e7d80d3910bc1
     xrdb ~/.Xresources
 
     cp config/.zshrc ~/
@@ -48,7 +31,13 @@ else
     cp config/.vimrc ~/.config/nvim/init.vim # source with :PlugInstall
     
     cp config/.tmux.conf ~/ # source with tmux source ~/.tmux.conf
-    # tmux source ~/.tmux.conf # only needed if running in tmux
+    [[ $TERM =~ "tmux" ]] && tmux source ~/.tmux.conf # only needed if running in tmux
 
     cp config/.gdbinit ~/
+
+else
+    echo "./setup"
+    echo "      --cache"
+    echo "      --export"
+    echo "      --diff"
 fi

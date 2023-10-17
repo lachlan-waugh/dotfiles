@@ -19,8 +19,8 @@ alias docker-bash='get_shell() { docker exec -it $( docker ps | grep "$1" | cut 
 
 # pwn stuff
 alias binja='/home/melon/programs/binja/binaryninja/binaryninja'
-alias kali='qemu-system-x86_64 -m 20G -smp 3 -accel kvm -drive file=kali-2023.qcow2 -boot order=d -drive file=kali_hdd,format=raw'
 
 alias aliases='vim ~/.zsh_aliases && source ~/.zsh_aliases'
 alias config='vim ~/.config/i3/config'
+
 alias commands='cat ~/.local/share/commands'
