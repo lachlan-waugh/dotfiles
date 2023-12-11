@@ -34,6 +34,13 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
+Plug 'Shatur/neovim-ayu'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'folke/lsp-colors.nvim'
+Plug 'stevearc/conform.nvim'
+Plug 'mattn/vim-lsp-settings'
+Plug 'sheerun/vim-polyglot'
+Plug 'folke/trouble.nvim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
@@ -713,3 +720,10 @@ nnoremap <C-H> <C-W><C-H>
 "Split below and right (rather than above and left which is default)
 set splitbelow
 set splitright
+
+"" NERDTREE SIDEBAR
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+
+syntax on
