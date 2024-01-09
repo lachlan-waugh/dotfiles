@@ -11,6 +11,7 @@ Also install
     * i3status
     * i3lock
     * rofi
+    * rofi-theme-collection-git
     * yad (zenity)
     * suckless-tools
     * dmenu
