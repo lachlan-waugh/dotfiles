@@ -661,7 +661,7 @@ autocmd Filetype html setlocal ts=2 sw=2 expandtab
 
 " svelte
 let g:vim_svelte_plugin_load_full_syntax = 1
-
+let g:vim_svelte_plugin_use_typescript = 1
 
 "*****************************************************************************
 "*****************************************************************************
@@ -725,5 +725,10 @@ set splitright
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
+
+hi LspReferenceRead cterm=bold ctermbg=red
+hi LspReferenceText cterm=bold ctermbg=red
+hi LspReferenceWrite cterm=bold ctermbg=red
+hi LspWarningText cterm=bold ctermbg=red
 
 syntax on
