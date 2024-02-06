@@ -1,43 +1,6 @@
 #!/usr/bin/zsh
 
-if [[ $1 = '--cache' ]]; then
-    cp -r ~/.config/i3/* config/.i3/
-    cp ~/.Xresources config/.Xresources
-    cp ~/.zshrc config/.zshrc
-    cp ~/.zsh_aliases config/.zsh_aliases
-    cp ~/.config/nvim/init.vim config/.vimrc
-    cp ~/.tmux.conf config/.
-    cp ~/.gdbinit config/.gdbinit
-
-elif [[ $1 = "--diff" ]]; then
-    diff --color -r ~/.config/i3 config/.i3
-    diff --color ~/.Xresources config/.Xresources
-    diff --color ~/.zshrc config/.zshrc
-    diff --color ~/.zsh_aliases config/.zsh_aliases
-    diff --color ~/.config/nvim/init.vim config/.vimrc
-    diff --color ~/.tmux.conf config/.tmux.conf
-    diff --color ~/.gdbinit config/.gdbinit
-
-elif [[ $1 = "--export" ]]; then
-    cp -r config/.i3/* ~/.config/i3/ # source with $mod + Shift + r
-    cp config/.Xresources ~/
-    xrdb ~/.Xresources
-
-    cp config/.zshrc ~/
-    cp config/.zsh_aliases ~/
-    source ~/.zshrc
-
-    mkdir -p ~/.config/nvim
-    cp config/.vimrc ~/.config/nvim/init.vim # source with :PlugInstall
-    
-    cp config/.tmux.conf ~/ # source with tmux source ~/.tmux.conf
-    [[ $TERM =~ "tmux" ]] && tmux source ~/.tmux.conf # only needed if running in tmux
-
-    cp config/.gdbinit ~/
-
-else
-    echo "./setup"
-    echo "      --cache"
-    echo "      --export"
-    echo "      --diff"
-fi
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+ripgrep
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
