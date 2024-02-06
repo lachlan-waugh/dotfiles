@@ -13,8 +13,8 @@ config = dict(os.environ)
 status = check_output(['acpi'], universal_newlines=True)
 
 # if its a desktop/no battery, just don't print anything lol
-if "0%" in status:
-    return
+if " 0%" in status:
+    exit(0)
 
 if not status:
     # stands for no battery found
