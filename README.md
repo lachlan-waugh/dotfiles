@@ -10,10 +10,10 @@
     * i3lock
 
 yay
-    alacritty tmux neovim nitrogen nordic-wallpaper z
+    alacritty tmux neovim nitrogen nordic-wallpaper z ripgrep stow
     
 ```
-yay alacritty tmux neovim nitrogen nordic-wallpaper z
+yay alacritty tmux neovim nitrogen nordic-wallpaper z ripgrep stow
 ```
 
 pip
