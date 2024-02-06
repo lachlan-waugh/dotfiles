@@ -167,8 +167,8 @@ bindsym --release $mod+p exec import png:- | xclip -selection clipboard -t image
 bindsym --release $mod+Shift+p exec import ~/other/pictures/$(date +%Y-%m-%d-%T)-screenshot.png && notify-send "Screenshot saved to ~/other/pictures/$(date +%Y-%m-%d-%T)-screenshot.png"
 
 # Application menu handled by rofi
-bindsym $mod+d exec rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi
-bindsym $mod+t exec rofi -show window -config ~/.config/rofi/rofidmenu.rasi
+bindsym $mod+d exec rofi -modi drun -show drun
+bindsym $mod+t exec rofi -show window
 
 #############################################
 # autostart applications/services on login: #
