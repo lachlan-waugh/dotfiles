@@ -10,12 +10,11 @@
 * ripgrep
 * stow
 * i3blocks
-* yad
-* (zenity)
+* yad (zenity)
 * suckless-tools
 
 ```
-yay alacritty tmux neovim nitrogen nordic-wallpaper z ripgrep stow i3blocks yad (zenity) suckless-tools
+yay alacritty tmux neovim nitrogen nordic-wallpaper z ripgrep stow i3blocks yad suckless-tools
 ```
 
 ### pip
