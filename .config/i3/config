@@ -219,6 +219,10 @@ client.unfocused	    $darkblue	$darkblue	$grey		$grey		$darkgrey
 client.focused_inactive	$darkblue	$darkblue	$grey		$grey		$black
 client.urgent		    $urgentred	$urgentred	$white		$grey		$yellowbrown
 
+# TODO: maybe change this to be based on monitor size?
+floating_minimum_size 640 x 480
+floating_maximum_size 1600 x 1200
+
 ############################################
 # bar settings (input comes from i3blocks) #
 ############################################
