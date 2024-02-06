@@ -3,9 +3,9 @@ alias svim='sudo nvim'
 alias mail='thunderbird-beta'
 alias dldir='wget -r -nH --cut-dirs=2 --no-parent --reject="index.html*"'
 
-# if there's no gui for wifi login lol
-alias wifi='nmcli device wifi connect Lamington password '
-alias wifi_login='login() { nmcli device wifi connect $1 password $2 };login'
+# don't overwrite stuff
+alias cp='cp -i'
+alias mv='mv -i'
 
 alias clone='clone() { git clone git@github.com:lachlan-waugh/$1.git };clone'
 alias gitbot='bot() { git "$@" --config core.sshCommand="ssh -i ~/.ssh/melonbot" };bot'
