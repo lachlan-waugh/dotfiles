@@ -22,3 +22,5 @@ export PYTHONPATH="$PYTHONPATH:/$HOME/todo/uni/sols/6447-sols/lib"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$GEM_HOME/bin"
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+
+export EDITOR='nvim'
