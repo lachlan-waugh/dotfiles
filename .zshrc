@@ -23,4 +23,7 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$GEM_HOME/bin"
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 
+export GOPATH="$HOME/.go"
+export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
+
 export EDITOR='nvim'
