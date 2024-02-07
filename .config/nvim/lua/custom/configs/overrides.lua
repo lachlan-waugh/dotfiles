@@ -34,6 +34,11 @@ M.mason = {
     "deno",
     "prettier",
 
+    -- backend stuff
+    "gopls",
+    "rust-analyzer",
+    "python-lsp-server",
+
     -- c/cpp stuff
     "clangd",
     "clang-format",

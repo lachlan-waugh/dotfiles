@@ -2,7 +2,11 @@ local overrides = require("custom.configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
+  {
 
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
   -- Override plugin definition options
 
   {
