@@ -20,7 +20,7 @@ alias docker-bash='get_shell() { docker exec -it $( docker ps | grep "$1" | cut 
 # pwn stuff
 alias binja='/home/melon/programs/binja/binaryninja/binaryninja'
 
-alias aliases='vim ~/.zsh_aliases && source ~/.zsh_aliases'
+alias aliases='vim ~/.config/zsh/aliases && source ~/.config/zsh/aliases'
 alias config='vim ~/.config/i3/config'
 
 alias commands='cat ~/.local/share/commands'

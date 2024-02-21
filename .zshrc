@@ -11,8 +11,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
-[ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
-
+[ -f ~/.config/zsh/aliases ] && source ~/.config/zsh/aliases 
 . /usr/share/z/z.sh
 
 # pwn stuff
