@@ -1,1 +1,4 @@
 .config/tmux/plugins
+.config/zsh/omz/*
+.data/z/*
+.data/zsh/*

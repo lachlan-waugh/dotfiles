@@ -1,18 +1,20 @@
-export ZSH="$HOME/.oh-my-zsh"
+DATA=$HOME/.data
+CONFIG=$HOME/.config
 
-# https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# zsh
+export ZSH="$CONFIG/zsh/omz"
+export ZSH_COMPDUMP=$DATA/zsh/zcompdump-$HOST
+export HISTFILE=$DATA/zsh/history
+zstyle ':omz:update' mode auto # update automatically
 ZSH_THEME="kennethreitz"
-
-# update automatically without asking
-zstyle ':omz:update' mode auto
-
 plugins=(git)
-
 source $ZSH/oh-my-zsh.sh
-export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
-[ -f ~/.config/zsh/aliases ] && source ~/.config/zsh/aliases 
+[ -f $CONFIG/zsh/aliases ] && source $CONFIG/zsh/aliases 
+
+# z.sh
 . /usr/share/z/z.sh
+export _Z_DATA=$DATA/z/.z
 
 # pwn stuff
 export PYTHONPATH="$PYTHONPATH:/$HOME/todo/uni/sols/6447-sols/lib"
