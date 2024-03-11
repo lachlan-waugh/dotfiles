@@ -23,4 +23,4 @@ alias binja='/home/melon/programs/binja/binaryninja/binaryninja'
 alias aliases='vim ~/.config/zsh/aliases && source ~/.config/zsh/aliases'
 alias config='vim ~/.config/i3/config'
 
-alias commands='cat ~/.local/share/commands'
+alias f="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
