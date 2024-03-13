@@ -1,13 +1,15 @@
 #!/usr/bin/zsh
 
-for app in alacritty tmux neovim nitrogen nordic-wallpaper z ripgrep stow i3blocks yad suckless-tools python python-pip python-neovim zsh; do
+for app in alacritty tmux neovim nitrogen nordic-wallpaper z ripgrep stow i3blocks yad suckless-tools python python-pip python-neovim zsh ruby npm bun; do
 	echo "Y" | sudo pacman -S $app;
 	if [[ $? -eq 1 ]]; then
 		yay $app;
 	fi
 done
 rm -rf ~/.config/i3 .zshrc ~/.config/user-dirs.dirs ~/.Xresources
+rm -rf ~/.config/nvim ~/.local/share/nvim
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 sudo chsh -s /bin/zsh
+sudo mkdir -p ~/.data/z ~/.data/zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
