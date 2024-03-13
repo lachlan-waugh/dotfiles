@@ -6,7 +6,7 @@ for app in alacritty tmux neovim nitrogen nordic-wallpaper z ripgrep stow i3bloc
 		yay $app;
 	fi
 done
-rm -rf ~/.config/i3 .zshrc ~/.config/user-dirs.dirs ~/.Xresources
+rm -rf ~/.config/i3 ~/.zshrc ~/.config/user-dirs.dirs ~/.Xresources
 rm -rf ~/.config/nvim ~/.local/share/nvim
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
