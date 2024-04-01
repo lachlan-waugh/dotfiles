@@ -1,7 +1,19 @@
 #!/usr/bin/zsh
 
-yay yay alacritty tmux neovim nitrogen nordic-wallpaper z ripgrep stow i3blocks yad suckless-tools
-pip install neovim
+sudo pacman -Syyu
+for app in alacritty tmux neovim nitrogen nordic-wallpaper z ripgrep stow i3blocks yad suckless-tools python python-pip python-neovim zsh ruby npm bun fzf tailscale; do
+	echo "Y" | sudo pacman -S $app;
+	if [[ $? -eq 1 ]]; then
+		yay $app;
+	fi
+done
+rm -rf ~/.config/i3 ~/.zshrc ~/.config/user-dirs.dirs ~/.Xresources
+rm -rf ~/.config/nvim ~/.local/share/nvim
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+git clone https://github.com/NvChad/starter ~/.config/nvim --depth 1 && nvim
+sudo chsh -s /bin/zsh
+sudo mkdir -p ~/.data/z ~/.data/zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+mv ~/.oh-my-zsh/* ~/.config/zsh/omz/ && rm -rf ~/.oh-my-zsh
+
+# go into tmux and <PREFIX> + I
