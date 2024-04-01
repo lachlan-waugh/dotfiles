@@ -5,29 +5,38 @@ if ! [[ -f setup ]]; then
   exit 1;
 fi
 
+# I could do some more advanced globbing stuff
+# but kind don't want to break stuff
+clear() {
+  for file in .zshrc .config/zsh .config/i3 .config/nvim .config/rofi .config/tmux .config/user-dirs.dirs .gitconfig .Xresources .gdbinit .local/share/fonts .local/share/rofi .local/share/nvim; do
+    # something bad happened, gtfo
+    [[ -z $HOME || -z $file ]] && exit 1;
+	  rm -rf $HOME/$file;
+  done; 
+}
+
 # clear out all the existing config files stow would link to 
 ## NOTE: if somehow $file (and $HOME (even worse)) is empty
 ## this would be like really bad (delete / or ~) but im lazy so
 ## use caution if you want to do this
 if [[ $1 == "clear" ]]; then
-    # I could do some more advanced globbing stuff
-    # but kind don't want to break stuff
-    for file in .zshrc .zsh_aliases .gitconfig .Xresources .gdbinit .config/* .local/*/* .local/share/nvim .oh-my-zsh; do
-      # something bad happened, gtfo
-      [[ -z $HOME || -z $file ]] && exit 1;
-	    rm -rf $HOME/$file;
-    done; 
+  clear;
+  exit 0;
 fi
 
-sudo pacman -Syu yay
-for package in alacritty tmux neovim nitrogen nordic-wallpapers z ripgrep stow i3blocks yad stow python-pip npm; do
-  sudo pacman -S $package
-  # if the package isn't found (e.g. its on the aur)
-  # install via yay
-  [[ $? -eq 1 ]] && yay $package;
-done;
+echo "Y" | sudo pacman -Syyu yay
+for app in alacritty tmux neovim nitrogen nordic-wallpaper z ripgrep stow i3blocks yad suckless-tools python python-pip python-neovim zsh ruby npm bun fzf tailscale; do
+	echo "Y" | sudo pacman -S $app;
+	if [[ $? -eq 1 ]]; then
+		yay $app;
+	fi
+done
 
-pip install neovim
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+git clone https://github.com/NvChad/starter ~/.config/nvim --depth 1 && nvim
+sudo chsh -s /bin/zsh
+sudo mkdir -p ~/.data/z ~/.data/zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+mv ~/.oh-my-zsh/* ~/.config/zsh/omz/ && rm -rf ~/.oh-my-zsh
+
+# go into tmux and <PREFIX> + I

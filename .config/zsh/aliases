@@ -1,4 +1,5 @@
 alias vim='nvim'
+alias nano='nvim'
 alias svim='sudo nvim'
 alias mail='thunderbird-beta'
 alias dldir='wget -r -nH --cut-dirs=2 --no-parent --reject="index.html*"'
@@ -20,7 +21,7 @@ alias docker-bash='get_shell() { docker exec -it $( docker ps | grep "$1" | cut 
 # pwn stuff
 alias binja='/home/melon/programs/binja/binaryninja/binaryninja'
 
-alias aliases='vim ~/.zsh_aliases && source ~/.zsh_aliases'
+alias aliases='vim ~/.config/zsh/aliases && source ~/.config/zsh/aliases'
 alias config='vim ~/.config/i3/config'
 
-alias commands='cat ~/.local/share/commands'
+alias f="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
