@@ -1,6 +1,32 @@
 #!/usr/bin/zsh
 
-yay yay alacritty tmux neovim nitrogen nordic-wallpaper z ripgrep stow i3blocks yad suckless-tools
+if ! [[ -f setup ]]; then
+  echo "run this from the root of the dotfiles project"
+  exit 1;
+fi
+
+# clear out all the existing config files stow would link to 
+## NOTE: if somehow $file (and $HOME (even worse)) is empty
+## this would be like really bad (delete / or ~) but im lazy so
+## use caution if you want to do this
+if [[ $1 == "clear" ]]; then
+    # I could do some more advanced globbing stuff
+    # but kind don't want to break stuff
+    for file in .zshrc .zsh_aliases .gitconfig .Xresources .gdbinit .config/* .local/*/* .local/share/nvim .oh-my-zsh; do
+      # something bad happened, gtfo
+      [[ -z $HOME || -z $file ]] && exit 1;
+	    rm -rf $HOME/$file;
+    done; 
+fi
+
+sudo pacman -Syu yay
+for package in alacritty tmux neovim nitrogen nordic-wallpapers z ripgrep stow i3blocks yad stow python-pip npm; do
+  sudo pacman -S $package
+  # if the package isn't found (e.g. its on the aur)
+  # install via yay
+  [[ $? -eq 1 ]] && yay $package;
+done;
+
 pip install neovim
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
