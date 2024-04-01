@@ -14,7 +14,7 @@ source $ZSH/oh-my-zsh.sh
 
 # z.sh
 . /usr/share/z/z.sh
-export _Z_DATA=$DATA/z/.z
+export _Z_DATA=$DATA/z/z
 
 # pwn stuff
 export PYTHONPATH="$PYTHONPATH:/$HOME/todo/uni/sols/6447-sols/lib"
