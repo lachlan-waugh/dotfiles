@@ -14,7 +14,8 @@ source $ZSH/oh-my-zsh.sh
 # unique aliases/config for this device
 [ -f $CONFIG/zsh/unique ] && source $CONFIG/zsh/unique
 
-. /usr/share/z/z.sh
+[ -f /usr/share/z/z.sh ] && . /usr/share/z/z.sh
+[ -f $CONFIG/z/z.sh ] && . $CONFIG/z/z.sh
 # export _Z_DATA=$DATA/z/z
 
 # hugo stuff (well technically it's ruby)
