@@ -163,6 +163,10 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
 # screenshots
 bindsym --release $mod+p exec import png:- | xclip -selection clipboard -t image/png
 bindsym --release $mod+Shift+p exec import ~/other/pictures/$(date +%Y-%m-%d-%T)-screenshot.png && notify-send "Screenshot saved to ~/other/pictures/$(date +%Y-%m-%d-%T)-screenshot.png"
