@@ -11,13 +11,12 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 [ -f $CONFIG/zsh/aliases ] && source $CONFIG/zsh/aliases 
+[ -f $CONFIG/zsh/work ] && source $CONFIG/zsh/work
+[ -f $CONFIG/zsh/uni ] && source $CONFIG/zsh/uni 
 
 # z.sh
 . /usr/share/z/z.sh
 # export _Z_DATA=$DATA/z/z
-
-# pwn stuff
-export PYTHONPATH="$PYTHONPATH:/$HOME/todo/uni/sols/6447-sols/lib"
 
 # hugo stuff (well technically it's ruby)
 export PATH="$PATH:$HOME/.local/bin"
@@ -28,3 +27,5 @@ export GOPATH="$HOME/.go"
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 
 export EDITOR='nvim'
+
+eval $(ssh-agent) 2>&1 > /dev/null
