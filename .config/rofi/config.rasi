@@ -14,4 +14,4 @@ configuration{
     sidebar-mode: true;
 }
 
-@theme "/home/melon/.local/share/rofi/themes/catppuccin.rasi"
+@theme "~/.local/share/rofi/themes/catppuccin.rasi"
