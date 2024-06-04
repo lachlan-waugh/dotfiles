@@ -19,7 +19,7 @@ alias docker-ip='get_ip() { docker inspect -f "{{range.NetworkSettings.Networks}
 alias docker-bash='get_shell() { docker exec -it $( docker ps | grep "$1" | cut -f1 -d" " ) /bin/bash };get_shell'
 
 # pwn stuff
-alias binja='/home/melon/programs/binja/binaryninja/binaryninja'
+alias binja='$HOME/programs/binaryninja/binaryninja'
 
 alias aliases='vim ~/.config/zsh/aliases && source ~/.config/zsh/aliases'
 alias config='vim ~/.config/i3/config'
