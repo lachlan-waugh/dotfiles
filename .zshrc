@@ -11,10 +11,9 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 [ -f $CONFIG/zsh/aliases ] && source $CONFIG/zsh/aliases 
-[ -f $CONFIG/zsh/work ] && source $CONFIG/zsh/work
-[ -f $CONFIG/zsh/uni ] && source $CONFIG/zsh/uni 
+# unique aliases/config for this device
+[ -f $CONFIG/zsh/unique ] && source $CONFIG/zsh/unique
 
-# z.sh
 . /usr/share/z/z.sh
 # export _Z_DATA=$DATA/z/z
 
