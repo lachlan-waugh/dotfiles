@@ -11,13 +11,12 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 [ -f $CONFIG/zsh/aliases ] && source $CONFIG/zsh/aliases 
+# unique aliases/config for this device
+[ -f $CONFIG/zsh/unique ] && source $CONFIG/zsh/unique
 
-# z.sh
-. /usr/share/z/z.sh
+[ -f /usr/share/z/z.sh ] && . /usr/share/z/z.sh
+[ -f $CONFIG/z/z.sh ] && . $CONFIG/z/z.sh
 # export _Z_DATA=$DATA/z/z
-
-# pwn stuff
-export PYTHONPATH="$PYTHONPATH:/$HOME/todo/uni/sols/6447-sols/lib"
 
 # hugo stuff (well technically it's ruby)
 export PATH="$PATH:$HOME/.local/bin"
