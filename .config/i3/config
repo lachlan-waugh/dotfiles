@@ -188,7 +188,7 @@ exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 
 # set wallpaper
 exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 2 && xrandr --output DisplayPort-1 --primary --mode 2560x1440 --rate 59.95 --output DisplayPort-0 --mode 1920x1080 --rate 143.85 --right-of DisplayPort-1 --output HDMI-A-0 --mode 2560x1440 --rate 59.95 --right-of DisplayPort-0
+exec --no-startup-id sleep 2 && xrandr --output HDMI-A-0 --primary --mode 2560x1440 --rate 59.95 --output DisplayPort-0 --mode 2560x1440 --rate 143.85 --right-of HDMI-A-0 --output DisplayPort-1 --mode 2560x1440 --rate 59.95 --right-of DisplayPort-0
 
 # start blueberry app for managing bluetooth devices from tray:
 exec --no-startup-id blueberry-tray
