@@ -20,6 +20,18 @@ return {
 
 			lspconfig.rust_analyzer.setup({})
 
+      lspconfig.pyright.setup({
+        filetypes = {"py"}
+      })
+
+      lspconfig.svelte.setup({
+        filetypes = {"svelte"}
+      })
+
+      lspconfig.ts_ls.setup({
+        filetypes = {"ts", "tsx"}
+      })
+
 			lspconfig.gopls.setup({
 				filetypes = { "go", "gomod", "gowork", "gotmpl" },
 				settings = {

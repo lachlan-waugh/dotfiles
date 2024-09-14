@@ -8,5 +8,8 @@ return {
     "rust-analyzer",
     "rustfmt",
     "stylua",
+    "pyright",
+    "ts_ls",
+    "svelte-language-server"
   },
 }

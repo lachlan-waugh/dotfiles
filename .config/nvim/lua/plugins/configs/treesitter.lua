@@ -6,6 +6,11 @@ return {
 		"rust",
 		"gleam",
 		"templ",
+    "svelte",
+    "typescript",
+    "javascript",
+    "css",
+    "html"
 	},
 	highlight = {
 		enable = true,
