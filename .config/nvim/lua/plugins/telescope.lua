@@ -3,18 +3,18 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     cmd = "Telescope",
-    init = function()
-      local builtin = require('telescope.builtin')
-      local wk = require('which-key')
-      wk.add({
-      -- TODO: fix eventually
-       -- { "<leader>fb", <function 1>, desc = "Find Buffer" },
-       -- { "<leader>ff", <function 1>, desc = "Find File" },
-       -- { "<leader>fg", <function 1>, desc = "Find with Grep" },
-       -- { "<leader>fh", <function 1>, desc = "Find Help" },
-       -- { "<leader>fn", ":Telescope file_browser path=%:p:help|select_buffer=true<CR>|", desc = "File Browser" },
-      })
-    end,
+
+    -- 1. We replace `init` with `keys`.
+    -- Lazy will automatically map these keys and ONLY load Telescope when you press them.
+    keys = {
+      { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Find Buffer" },
+      { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find File" },
+      { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Find with Grep" },
+      { "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Find Help" },
+      -- Fixed a typo here in your path string (%:p:h instead of %:p:help)
+      { "<leader>fn", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>", desc = "File Browser" },
+    },
+
     opts = function()
       return {
         defaults = {
@@ -28,10 +28,9 @@ return {
             "--column",
             "--smart-case",
           },
-          previewer = true,
-          file_previewer = require 'telescope.previewers'.vim_buffer_cat.new,
-          grep_previewer = require 'telescope.previewers'.vim_buffer_vimgrep.new,
-          qflist_previewer = require 'telescope.previewers'.vim_buffer_qflist.new,
+          -- 2. Removed the manual previewer `requires`.
+          -- Telescope defaults to these exact previewers automatically,
+          -- and calling `require` inside opts can sometimes trigger loading loops.
         },
         extensions = {
           file_browser = {
@@ -44,8 +43,9 @@ return {
         },
       }
     end,
+
     config = function(_, opts)
-      local telescope = require "telescope"
+      local telescope = require("telescope")
       telescope.setup(opts)
 
       -- load extensions

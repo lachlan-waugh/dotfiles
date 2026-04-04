@@ -10,7 +10,7 @@ ZSH_THEME="kennethreitz"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-[ -f $CONFIG/zsh/aliases ] && source $CONFIG/zsh/aliases 
+[ -f $CONFIG/zsh/aliases ] && source $CONFIG/zsh/aliases
 # unique aliases/config for this device
 [ -f $CONFIG/zsh/unique ] && source $CONFIG/zsh/unique
 
@@ -29,3 +29,12 @@ export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 export EDITOR='nvim'
 
 eval $(ssh-agent) 2>&1 > /dev/null
+
+# bun completions
+[ -s "/home/sweater/.bun/_bun" ] && source "/home/sweater/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"

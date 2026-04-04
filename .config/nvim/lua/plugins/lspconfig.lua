@@ -3,11 +3,13 @@ return {
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		config = function()
-			local lspconfig = require("lspconfig")
+			-- Autocompletion capabilities
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-			lspconfig.lua_ls.setup({
+			-- lua_ls
+			vim.lsp.config("lua_ls", {
+				capabilities = capabilities,
 				settings = {
 					Lua = {
 						diagnostics = {
@@ -17,22 +19,38 @@ return {
 					},
 				},
 			})
+			vim.lsp.enable("lua_ls")
 
-			lspconfig.rust_analyzer.setup({})
+			-- rust_analyzer
+			vim.lsp.config("rust_analyzer", {
+				capabilities = capabilities,
+			})
+			vim.lsp.enable("rust_analyzer")
 
-      lspconfig.pyright.setup({
-        filetypes = {"py"}
-      })
+			-- pyright
+			vim.lsp.config("pyright", {
+				capabilities = capabilities,
+				filetypes = { "py" },
+			})
+			vim.lsp.enable("pyright")
 
-      lspconfig.svelte.setup({
-        filetypes = {"svelte"}
-      })
+			-- svelte
+			vim.lsp.config("svelte", {
+				capabilities = capabilities,
+				filetypes = { "svelte" },
+			})
+			vim.lsp.enable("svelte")
 
-      lspconfig.ts_ls.setup({
-        filetypes = {"ts", "tsx"}
-      })
+			-- ts_ls
+			vim.lsp.config("ts_ls", {
+				capabilities = capabilities,
+				filetypes = { "ts", "tsx" },
+			})
+			vim.lsp.enable("ts_ls")
 
-			lspconfig.gopls.setup({
+			-- gopls
+			vim.lsp.config("gopls", {
+				capabilities = capabilities,
 				filetypes = { "go", "gomod", "gowork", "gotmpl" },
 				settings = {
 					env = {
@@ -43,16 +61,24 @@ return {
 					},
 				},
 			})
+			vim.lsp.enable("gopls")
 
-			lspconfig.tailwindcss.setup({
+			-- tailwindcss
+			vim.lsp.config("tailwindcss", {
+				capabilities = capabilities,
 				settings = {
 					includeLanguages = {
 						templ = "html",
 					},
 				},
 			})
+			vim.lsp.enable("tailwindcss")
 
-			lspconfig.templ.setup({})
+			-- templ
+			vim.lsp.config("templ", {
+				capabilities = capabilities,
+			})
+			vim.lsp.enable("templ")
 		end,
 	},
 }
